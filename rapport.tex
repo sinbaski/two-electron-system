@@ -92,6 +92,27 @@ One may now consider the energy difference $\Delta E$ between the two levels $\K
 \end{equation} 
 i.e. the energy splitting between two adjacent levels is proportional to the $J$-value of the upper level. This is known as the \textit{Land\'e's interval rule}, and can be a useful test for have how good the $LS$-approximation is. By measuring the energy splitting between different levels with same $L$ and $S$, and divide by $J$, one can investigate how good the $LS$-approximation is for the specific levels. 
 
+\subsection{Forbidden transitions}
+
+In the conducted experiments, it will be shown that transitions happen which actually are forbidden by the LS approximation. An attempt to explain these transitions will hereby follow. 
+
+Since the energy contribution from spin-orbit interaction is treated as a first order perturbation in the LS approximation, one might expect that the obtained "LS states" (let's call them $\ket{LS_n}$) only are approximately equal to the actual eigenstates to the full Hamiltonian (hereby denoted $\ket{\Psi_n}$). Still the set $\{ \ket{LS_n} \}$ still form a complete basis since they are formed from a set of commutating operators, meaning that \textit{any} state, including any $\ket{\Psi_n}$, can be expressed as a linear combination of $\ket{LS_n}$-states. For a particular $\ket{\Psi_n}$ it thereby holds that
+\begin{equation}
+\ket{\Psi_n} = \sum_m a_{nm} \ket{LS_m}.
+\end{equation}
+For most states, where the LS coupling is valid, the coefficients $a_{nm} = \delta_{nm}$ (where $\delta_{mn}$ is the Kronecker delta). Though, for a state $\ket{\Psi_\alpha}$ that happens to have a bad LS coupling, one might have
+\begin{equation}
+\ket{\Psi_\alpha} = a \ket{LS_\alpha} + b \ket{LS_\beta}
+\end{equation}
+for two LS states $\ket{LS_\alpha}$ and $\ket{LS_\beta}$, with $b$ small, but not negligible. Consider another state $\ket{LS_\gamma} = \ket{\Psi_\gamma}$ for which that the transition
+\begin{equation}
+\ket{LS_\gamma} \to \ket{LS_\beta}
+\end{equation}
+is valid by the LS approximation, but that the transition $\ket{LS_\gamma} \to \ket{LS_\alpha}$ is forbidden\footnote{For example, $\ket{LS_\alpha}$ might be a singlet, while $\ket{LS_\beta}$ and $\ket{LS_\gamma}$ are triplets.}. The transition probability between $\ket{\Psi_\alpha}$ and $\ket{\Psi_\gamma}$ will then be
+\begin{equation}
+P_{\alpha \to \gamma} \propto |\bra{\Psi_\gamma}-e\vec{r}\ket{\Psi_\alpha}|^2 = |a\bra{LS_\gamma}-e\vec{r}\ket{LS_\alpha} + b\bra{LS_\gamma}-e\vec{r}\ket{LS_\beta}|^2 = |b|^2 |\bra{LS_\gamma}-e\vec{r}\ket{LS_\beta}|^2 \neq 0.
+\end{equation}
+
 
 \subsection{The Hollow Cathode and the Fourier Transform Spectrometer}
 
@@ -192,7 +213,7 @@ rules that govern which transitions are possible:
 Under the guidance of the supervisor, the region of the spectrum with
 wave number from 17840 $\rm cm^{-1}$ to 17950 $\rm cm^{-1}$ is
 searched to find the peaks corresponding to the 7 transitions. The
-result is shown in table \ref{tab:transitions1}.
+results are shown in tables \ref{tab:transitions11} and \ref{tab:transitions12}.
 \begin{table}[htb!]
 \centering
 \begin{tabular}{c|c|c|c}
@@ -209,9 +230,30 @@ No. & position ($\rm cm^{-1}$) & Intensity & Width ($\rm cm^{-1}$) \\
 \hline
 \end{tabular}
 \caption{Peaks of the $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$
-  transitions}
-\label{tab:transitions1}
+  transitions for experiment 1.}
+\label{tab:transitions11}
 \end{table}
+
+\begin{table}[htb!]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline
+No. & position ($\rm cm^{-1}$) & Intensity & Width ($\rm cm^{-1}$) \\
+\hline
+1 & 17843.112 & 0.019 & 0.052 \\
+2 & 17848.001 & 0.020 & 0.052 \\
+3 & 17857.009 & 0.054 & 0.053 \\
+4 & 17869.837 & 0.079 & 0.053 \\
+5 & 17883.735 & 0.019 & 0.053 \\
+6 & 17888.094 & 0.131 & 0.053 \\
+7 & 17909.831 & 0.019 & 0.053 \\
+\hline
+\end{tabular}
+\caption{Peaks of the $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$
+  transitions for experiment 2.}
+\label{tab:transitions12}
+\end{table}
+
 In order to associate the measured peaks with the theoretically
 predicted transitions, one has to calculate the theoretical transition
 energies and compare them with the experimental results. The
@@ -220,9 +262,9 @@ intensities of the transitions. For that purpose, the intensity of the
 transition $3d4p\;^3\mathrm{D}_3 \to 3d4s\;^3\mathrm{D}_3$ is assigned
 the value 100, while the intensity of the other lines are represented
 as a percentage of it. The calculation is carried out using the
-formular
+formula\footnote{This formula might be derived by adding the time-dependent perturbation $h=-e \vec{r} \cdot \hat{e} E_0 \cos{\omega t}$ to the Hamiltonian (corresponding to the oscillating electric field with frequency $\omega$ and amplitude $E_0$ in direction $\hat{e}$ of a photon), whereby applying some time-dependent perturbation theory.} 
 \[
-S_{if} = |\matrixel{\psi_i}{e\vec{r}}{\psi_f}|^2
+S_{if} \propto |\matrixel{\psi_i}{e\vec{r}}{\psi_f}|^2
 \]
 And the result is listed in table \ref{tab:intensity1}
 \begin{table}[htb!]
@@ -243,7 +285,7 @@ And the result is listed in table \ref{tab:intensity1}
 \label{tab:intensity1}
 \end{table}
 
-Comparing table \ref{tab:intensity1} and table \ref{tab:transitions1},
+Comparing table \ref{tab:intensity1} with tables \ref{tab:transitions11} and \ref{tab:transitions12},
 it is immediately clear that line No.6 corresponds to transition $3
 \to 3$, since it has the highest intensity and the $3 \to 3$
 transition is predicted to have the highest intensity.
@@ -256,27 +298,34 @@ The other 4 lines have similar intensities and cannot be discerned in
 the same way. The lab manual gives the wave number of the involved
 levels:
 \begin{itemize}
-\item $3d4s\,^3D_1$: 20 335.360
-\item $3d4s\,^3D_2$: 20 349.260
-\item $3d4s\,^3D_3$: 20 371.000
+\item $3d4s\,^3D_1$: 20 335.360 cm$^{-1}$
+\item $3d4s\,^3D_2$: 20 349.260 cm$^{-1}$
+\item $3d4s\,^3D_3$: 20 371.000 cm$^{-1}$
 \end{itemize}
 Combining these data with the position of the identified lines No.6,
 No.4 and No.3, one can work out the wave number of the other levels as
-well as the position of the other lines. Eventually the correspondence
-between the lines and the transitions are established. The wave
-numbers of the $3d4p ^3D$ terms are shown below, and the
-transition-line correspondence is shown in table
-\ref{tab:line-transition1}.
+well as the position of the other lines. Eventually, the correspondence
+between the lines and the transitions are established. The calculated wave
+numbers of the $3d4p ^3D$ terms for the two experiments are shown below, and the
+transition-line correspondence is shown below:
+
+Experiment 1:							
 \begin{itemize}
-\item $3d4p\,^3D_1$: 38192.371
-\item $3d4p\,^3D_2$: 38219.099
-\item $3d4p\,^3D_3$: 38259.097
+\item $3d4p\,^3D_1$: 38192.371 cm$^{-1}$	
+\item $3d4p\,^3D_2$: 38219.099 cm$^{-1}$	
+\item $3d4p\,^3D_3$: 38259.097 cm$^{-1}$	
 \end{itemize}
 
-\begin{table}[htb!]
+Experiment 2:
+\begin{itemize}							
+\item $3d4p\,^3D_1$: 38192.369 cm$^{-1}$	
+\item $3d4p\,^3D_2$: 38219.097 cm$^{-1}$	
+\item $3d4p\,^3D_3$: 38259.094 cm$^{-1}$	
+\end{itemize}
+
+\begin{table}
 \centering
 \begin{tabular}{c|c}
-\hline
 No. & Transition ($J_1 \to J_2$)\\
 \hline
 1 & $1 \to 2$ \\
@@ -292,7 +341,27 @@ No. & Transition ($J_1 \to J_2$)\\
 \label{tab:line-transition1}
 \end{table}
 Now the relative intensities of the lines can be calculated from the
-experimental data (table \ref{tab:exp-intensity1}):
+experimental data (table \ref{tab:exp-intensity11} and \ref{tab:exp-intensity12}):
+\begin{table}[htb!]
+\centering
+\begin{tabular}{cc|c|c|c|}
+\cline{3-5}
+& & \multicolumn{3}{c|}{$3d4p ^3D$}\\
+\cline{3-5}
+& & 3 & 2 & 1\\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{$3d4s ^3D$}} & 3 & 100 (100) &
+15.27 (12.5) & \\
+\multicolumn{1}{|c|}{} & 2 & 14.50 (12.5) & 60.31 (55.8) & 14.50 (12.05) \\
+\multicolumn{1}{|c|}{} & 1 & & 16.36 (12.05) & 41.22 (36.16) \\
+\hline
+\end{tabular}
+\caption{\it Experimentally determined relative intensities, in experiment 1, of the
+  $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$ transitions. The
+  theoretical counterparts are surrounded by a parenthesis.}
+\label{tab:exp-intensity11}
+\end{table}
+
 \begin{table}[htb!]
 \centering
 \begin{tabular}{cc|c|c|c|}
@@ -307,20 +376,21 @@ experimental data (table \ref{tab:exp-intensity1}):
 \multicolumn{1}{|c|}{} & 1 & & 15.34 (12.05) & 42.86 (36.16) \\
 \hline
 \end{tabular}
-\caption{\it Experimentally determined relative intensities of the
+\caption{\it Experimentally determined relative intensities, in experiment 2, of the
   $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$ transitions. The
   theoretical counterparts are surrounded by a parenthesis.}
-\label{tab:exp-intensity1}
+\label{tab:exp-intensity12}
 \end{table}
+
 Land\'e's interval rule states that, if LS-coupling is valid, the
 energy splitting between two LS terms can be calculated as
 \[
-\Delta E = A J_u
+\Delta E = C J_u
 \]
-where A is a constant and $J_u$ is the J value of the upper level.
+where C is a constant and $J_u$ is the J value of the upper level.
 
 In order to verify or repudiate this statement, the following is
-calculated:
+calculated for experiment 1:
 \begin{eqnarray*}
 \frac{\Delta E_{3,2}}{3} &=& \frac{E(3d4p\,^3D_3) -
   E(3d4p\,^3D_2)}{3}\\
@@ -331,13 +401,18 @@ calculated:
 &=& \frac{38219.099 - 38192.371}{2} \\
 &=& 13.36
 \end{eqnarray*}
+In the same manner, the following is calculated for experiment 2:
+\begin{eqnarray*}
+\frac{\Delta E_{3,2}}{3} &=& 13.33,	\\
+\frac{\Delta E_{2,1}}{2} &=& 13.36.
+\end{eqnarray*}
 $\frac{\Delta E_{3,2}}{3}$ and $\frac{\Delta E_{2,1}}{2}$ are rather
 close, thus the validity of Land\'e's interval rule is affirmed.
 
-Another interesting thing observed in table \ref{tab:exp-intensity1}
+Another interesting thing observed in tables \ref{tab:exp-intensity11} and \ref{tab:exp-intensity12}
 is that the experimental intensities are generally greater than their
 theoretical counterparts. A review of the theoretical treatment
-suggests this is an effect of self absortion that has not been
+suggests this is an effect of self absorption that has not been
 considered so far: Photons emitted during the de-excitation process
 have to pass by other atoms in the sample and hence are subject to
 scattering and absorption. The cross section of the absorption is
@@ -357,7 +432,7 @@ are illustrated in figure \ref{fig:transition2}.
 \end{figure}
 As with the $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$ transitions, the supervisor
 helps locate the right region to search for the corresponding peaks. In total, 10 peaks are
-found (table \ref{tab:transitions2}):
+found (table \ref{tab:transitions21}) in experiment 1, and 8 peaks in experiment 2 (table \ref{tab:transitions22}):
 \begin{table}[htb!]
 \centering
 \begin{tabular}{c|c|c|c}
@@ -376,8 +451,28 @@ No. & position ($\rm cm^{-1}$) & Intensity & Width ($\rm cm^{-1}$) \\
 10 & 15525.872 & 0.456 & 0.048 \\
 \hline
 \end{tabular}
-\caption{Peaks of the $3d4p\,^3F_{2,3,4} \to 3d4s\,^3D_{1,2,3}$ transitions}
-\label{tab:transitions2}
+\caption{Peaks of the $3d4p\,^3F_{2,3,4} \to 3d4s\,^3D_{1,2,3}$ transitions for experiment 1.}
+\label{tab:transitions21}
+\end{table}
+
+\begin{table}[htb!]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline
+No. & position ($\rm cm^{-1}$) & Intensity & Width ($\rm cm^{-1}$) \\
+\hline
+1 & 15381.177 & 0.029 & 0.046 \\
+2 & 15395.077 & 0.130 & 0.046 \\
+3 & 15447.697 & 0.035 & 0.046 \\
+4 & 15469.431 & 0.241 & 0.046 \\
+5 & 15486.125 & 0.008 & 0.045 \\
+6 & 15500.025 & 0.055 & 0.046 \\
+7 & 15512.286 & 0.013 & 0.062 \\
+8 & 15525.873 & 0.311 & 0.047 \\
+\hline
+\end{tabular}
+\caption{Peaks of the $3d4p\,^3F_{2,3,4} \to 3d4s\,^3D_{1,2,3}$ transitions for experiment 2.}
+\label{tab:transitions22}
 \end{table}
 
 As has been done for the last group of transitions, the first task is to associate
@@ -402,24 +497,38 @@ for the relative intensity of the peaks: (table \ref{tab:intensity2})
 \end{table}
 
 The strongest three lines are immediately identifiable by their
-intensities:
+intensities in experiment 1:
 \begin{itemize}
 \item $4 \to 3$: No. 10
 \item $3 \to 2$: No. 6
 \item $2 \to 1$: No. 3
 \end{itemize}
+and in experiment 2:
+\begin{itemize}
+\item $4 \to 3$: No. 8
+\item $3 \to 2$: No. 4
+\item $2 \to 1$: No. 2
+\end{itemize}
 
 Then, as before, one can calculate the wave numbers of the
 $3d4p\,^3F_{4,3,2}$ terms using the wave numbers of the
-$3d4s\,^3D_{1,2,3}$ terms given in the lab manual.  The reults are
+$3d4s\,^3D_{1,2,3}$ terms given in the lab manual.  The results are
 as follows:
+
+Experiment 1:								
 \begin{itemize}
-\item $3d4p\,^3F_{4}$: 35896.872 $\rm cm^{-1}$.
-\item $3d4p\,^3F_{3}$: 35818.691 $\rm cm^{-1}$.
-\item $3d4p\,^3F_{2}$: 35730.437 $\rm cm^{-1}$.
+\item $3d4p\,^3F_{4}$: 35896.872 $\rm cm^{-1}$	
+\item $3d4p\,^3F_{3}$: 35818.691 $\rm cm^{-1}$	
+\item $3d4p\,^3F_{2}$: 35730.437 $\rm cm^{-1}$	
+\end{itemize}
+Experiment 2:
+\begin{itemize}							
+\item $3d4p\,^3F_{4}$: 35896.873 $\rm cm^{-1}$	
+\item $3d4p\,^3F_{3}$: 35818.691 $\rm cm^{-1}$	
+\item $3d4p\,^3F_{2}$: 35730.537 $\rm cm^{-1}$	
 \end{itemize}
 
-Then some of the transitions can be associated with the peaks, as shown in table \ref{tab:line-transition2}.
+Then some of the transitions can be associated with the peaks, as shown in tables \ref{tab:line-transition21} and \ref{tab:line-transition22}.
 \begin{table}[htb!]
 \centering
 \begin{tabular}{c|c}
@@ -429,17 +538,32 @@ No. & Transition ($J_1 \to J_2$)\\
 1 & $2 \to 3$ \\
 3 & $2 \to 1$ \\
 4 & $3 \to 3$ \\
-6 & $3 \to 2$\\
+6 & $3 \to 2$ \\
 10 & $4 \to 3$\\
 \hline
 \end{tabular}
-\caption{Line-transition correspondence}
-\label{tab:line-transition2}
+\caption{Line-transition correspondence in experiment 1.}
+\label{tab:line-transition21}
 \end{table}
 
-As one should have noticed, only 5 of the 6 anticipated lines have
-been identified - the $2 \to 2$ line is expected to have wave number
-15291.177 $\rm cm^{-1}$ and hence lies outside of the inspected region.
+\begin{table}[htb!]
+\centering
+\begin{tabular}{c|c}
+\hline
+No. & Transition ($J_1 \to J_2$)\\
+\hline
+1 & $2 \to 2$ \\
+2 & $2 \to 1$ \\
+3 & $3 \to 3$ \\
+4 & $3 \to 2$ \\
+8 & $4 \to 3$ \\
+\hline
+\end{tabular} 
+\caption{Line-transition correspondence in experiment 2.}
+\label{tab:line-transition22}
+\end{table}
+
+In experiment 2, the line corresponding to the transition $2 \to 3$ was not detected due to its low intensity.
 
 \begin{table}[htb!]
 \centering
@@ -455,14 +579,33 @@ been identified - the $2 \to 2$ line is expected to have wave number
 \multicolumn{1}{|c|}{} & 1 & & & 43.20 (46.67) \\
 \hline
 \end{tabular}
-\caption{\it Experimentally determined relative intensities of the
+\caption{\it Experimentally determined relative intensities, in experiment 1, of the
   $3d4p\,^3F_{4,3,2} \to 3d4s\,^3D_{1,2,3}$ transitions. The
   theoretical counterparts are surrounded by a parenthesis.}
-\label{tab:exp-intensity2}
+\label{tab:exp-intensity21}
 \end{table}
 
+\begin{table}[htb!]
+\centering
+\begin{tabular}{cc|c|c|c|}
+\cline{3-5}
+& & \multicolumn{3}{c|}{$3d4p ^3F$}\\
+\cline{3-5}
+& & 4 & 3 & 2\\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{$3d4s ^3D$}} & 3 & 100 (100) &
+11.18 (8.64) & 0.00 (0.25) \\
+\multicolumn{1}{|c|}{} & 2 & & 77.00 (69.19) & 9.27 (8.64)\\
+\multicolumn{1}{|c|}{} & 1 & & & 41.53 (46.67) \\
+\hline
+\end{tabular}
+\caption{\it Experimentally determined relative intensities, in experiment 2, of the
+  $3d4p\,^3F_{4,3,2} \to 3d4s\,^3D_{1,2,3}$ transitions. The
+  theoretical counterparts are surrounded by a parenthesis.}
+\label{tab:exp-intensity22} 
+\end{table}
 
-\section{Source Reference}
+\section{Source Reference} 
 
 \begin{enumerate}
 \item \textit{Two Electron Systems} (Lab Manual)
