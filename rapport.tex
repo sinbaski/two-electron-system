@@ -1,4 +1,4 @@
-
+  
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -10,21 +10,25 @@
 % \usepackage{graphicx}  
  
 \title{\textbf{FYSA31:} Two Electron System}
-\author{Author: Jonas Wess\'en} 
-\date{October 14th, 2011} 
+\author{Authors: Jonas Wess\'en and Xie Xiaolei}
+\date{October 20th, 2011} 
   
 \begin{document} 
   
 \maketitle    
 \thispagestyle{empty} 
  
-\newpage   
+\newpage
+\tableofcontents
+\newpage
 
-\section{Introduction}
+\section{Summary}
  
-\section{Theory}
-
-\subsection{LS-coupling and the Land\'e Interval Rule}
+This report concerns two experiments, in which the emission profile for calcium is analyzed. A sample of Ca is placed in a Hollow Cathode, and the spectrum of the emitted light is analyzed using a Fourier Transform Spectrometer. The energies corresponding to the transitions $3d4p\,^3D_{1,2,3} \to 3d4s\,^3D_{1,2,3}$ and $3d4p\,^3F_{2,3,4} \to 3d4s\,^3D_{1,2,3}$ are accurately measured, and compared to theoretical predictions obtained by the LS approximation. Upon analyzing the spectra, it was discovered that transitions that are forbidden by the LS approximation (singlet to triplet transitions) happen. These transitions are discussed, and an attempt is made to explain forbidden transitions such as these. Experiment 1 was conducted by Xiaolei and experiment 2 by Wess\'en.  
+ 
+\section{Theory \& Set-up}
+ 
+\subsection{LS-coupling \& the Land\'e Interval Rule}
 
 In the following section, the $LS$-coupling will be described. An description of its required approximations is presented, and finally the Land\'e Interval Rule is described which in the experiment will be used for investigation of whether $LS$-coupling is valid or not. 
 
@@ -36,15 +40,15 @@ where $g_s \approx 2$ is the gyromagnetic ratio, $\mu_b = e \hbar / 2m_e$ the Bo
 \begin{equation}
 \vec{\mu_S} = -g_s \frac{\mu_b}{\hbar} \vec{S}. 	\label{muS}
 \end{equation}
-$\vec{S}$ is described by the quantum number $S$ in the same sense that $\vec{s}$ is described by $s$. There are only two allowed directions for the electron spin ("up" or "down"), meaning that $\vec{S}$ is nothing but the sum of up's and down's. Suppose there are $n$ valence electrons bound to the atom (the other electrons form closed shells with no resulting orbital or spin angular momentum). The minimum value $S$ can take is when the spin of as many electrons as possible cancel (all electrons if $n$ is even, and all except one if $n$ is odd). The maximum $S$ occurs when all the spins align. This can be summarized in
+$\vec{S}$ is described by the quantum number $S$ in the same sense that $\vec{s}$ is described by $s$. There are only two allowed directions for the electron spin (''up'' or ''down''), meaning that $\vec{S}$ is nothing but the sum of up's and down's. Suppose there are $n$ valence electrons bound to the atom (the other electrons form closed shells with no resulting orbital or spin angular momentum). The minimum value $S$ can take is when the spin of as many electrons as possible cancel (all electrons if $n$ is even, and all except one if $n$ is odd). The maximum $S$ occurs when all the spins align. This can be summarized in
 \begin{equation}
-S = \frac{1-(-1)^{n+1}}{2} , \dots , \frac{n}{2}.
+S = \frac{1-(-1)^{n+1}}{2} , \dots , \frac{n}{2}. \label{S1}
 \end{equation}
 where the dots indicate integer steps (flipping a spin from $-1/2$ to $+1/2$ results in an integer change of the total spin). For the two electron system ($n=2$) with electron spins $s_1$ and $s_2$, this description is equivalent to the more familiar
 \begin{equation}
-S = |s_1 - s_2|, \dots, |s_1 + s_2|
+S = |s_1 - s_2|, \dots, |s_1 + s_2|			\label{S2}
 \end{equation}
-giving $S=0$ or $S=1$. 
+giving $S=0$ or $S=1$. Of course, one also has to take the Pauli principle into account (no pair of electrons in abound system can be described by the same set of quantum numbers) when determining which values of $S$ that are possible. The Pauli principle is not included in eq.(\ref{S1}) and (\ref{S2}).  
 
 An single orbiting charge (with charge $dq$) will classically produce a magnetic field $d\vec{B}$ proportional to the angular momentum $\vec{l}$ of the charge. This can be realized by considering Biot-Savat's law for a moving charge
 \begin{equation}
@@ -114,7 +118,7 @@ P_{\alpha \to \gamma} \propto |\bra{\Psi_\gamma}-e\vec{r}\ket{\Psi_\alpha}|^2 = 
 \end{equation}
 
 
-\subsection{The Hollow Cathode and the Fourier Transform Spectrometer}
+\subsection{The Hollow Cathode \& the Fourier Transform Spectrometer}
 
 \begin{figure}[htb!]
 \label{HC}
@@ -160,19 +164,7 @@ where $\delta \sigma$ is the broadening of the line (in terms of wavenumbers).
 \caption{\textit{A sum of cosine functions (in this case the functions depicted in figure 3) with different wavenumbers and Gaussian-distributed amplitudes (intensities) will approximately be a damped cosine function with wave number corresponding to the strongest intensity. This is signal the Fourier Transform Spectrometer records, meaning that after a certain value of $x$ (optical path difference of the two light beams), the signal does not contain any information. The figure uses arbitrary units for $x$ and $I$.}}
 \end{figure}
 
-
-%It holds that
-%\begin{equation}
-%I(x) = \frac{1}{\sqrt{2\pi }} \int_{-\infty}^{\infty} e^{-i\sigma x} \hat{I}(\sigma ) d \sigma.
-%\end{equation}
-%In the spectra, $\hat{I}(\sigma )$ will be a narrow Gaussian distribution around each wavenumber $\sigma_i$ with variance $D^2$, i.e.
-%\begin{equation}
-%\hat{I}(\sigma ) = 
-%\end{equation}
-
-%When $x=0$, constructive interference will occur at all wavelengths. The actual spectrum will of course consist of %(approximately Gaussian) peaks at different wavenumbers $\sigma$, but lets first consider 
-
-\section{Experiment \& Results}
+\section{Results \& Discussion}
 In the ground state, $^{20}_{40}Ca$ has the configuration
 $[\mathrm{Ar}]4s^2$. In the 1st excited state, one of the 4s electrons is
 excited to the 3d state, giving rise to the LS terms $^1D_2$ and
